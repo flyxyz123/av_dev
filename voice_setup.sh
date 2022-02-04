@@ -6,6 +6,8 @@
 sudo apt update
 yes | sudo apt upgrade
 yes | sudo apt install espeak libespeak1 portaudio19-dev python-dev libportaudio2 libportaudiocpp0 portaudio19-dev python-gpiozero flac
+# misc
+yes | sudo apt install git
 
 # may need sudo pip install those packages if start voice program in sudo
 # pyttsx3: text to speech library
