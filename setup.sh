@@ -2,12 +2,13 @@
 # may also need to change /usr/bin/python symlink from python2 to python3
 # may need to install python-dev-is-python3 instead of python-dev
 
+# misc
+yes | sudo apt install git python3-pip
+
 # from https://github.com/quangthanh010290/voice_control_using_raspberry
 sudo apt update
 yes | sudo apt upgrade
 yes | sudo apt install espeak libespeak1 portaudio19-dev python-dev libportaudio2 libportaudiocpp0 portaudio19-dev python-gpiozero flac
-# misc
-yes | sudo apt install git
 
 # may need sudo pip install those packages if start voice program in sudo
 # pyttsx3: text to speech library
