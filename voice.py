@@ -1,5 +1,4 @@
-#!/bin/python
-
+#!/bin/python3
 # combine and modified codes from:
 # https://github.com/quangthanh010290/voice_control_using_raspberry/blob/master/rpi_voice_control.py
 
