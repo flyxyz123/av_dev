@@ -1,4 +1,6 @@
 #!/bin/sh
+# may also need to change /usr/bin/python symlink from python2 to python3
+# may need to install python-dev-is-python3 instead of python-dev
 
 # from https://github.com/quangthanh010290/voice_control_using_raspberry
 sudo apt update
