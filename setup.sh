@@ -3,7 +3,7 @@
 # may need to install python-dev-is-python3 instead of python-dev
 
 # misc
-yes | sudo apt install git python3-pip
+yes | sudo apt install git python3-pip pulseaudio
 
 # from https://github.com/quangthanh010290/voice_control_using_raspberry
 sudo apt update
