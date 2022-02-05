@@ -106,21 +106,5 @@ with mic as source:
 rec.listen_in_background(mic, callback, phrase_time_limit=2)
 
 if __name__ == '__main__':
-    #pixel_ring = find()
-    #while True:
-    #    try:
-    #        pixel_ring.wakeup(180)
-    #        time.sleep(3)
-    #        pixel_ring.listen()
-    #        time.sleep(3)
-    #        pixel_ring.think()
-    #        time.sleep(3)
-    #        pixel_ring.set_volume(8)
-    #        time.sleep(3)
-    #        pixel_ring.off()
-    #        time.sleep(3)
-    #    except KeyboardInterrupt:
-    #        break
-    #pixel_ring.off()
     while True:
         time.sleep(0.1)
