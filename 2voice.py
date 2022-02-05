@@ -83,13 +83,10 @@ def callback(self, audio):
     print("finish recognize, your speech is: ", you)
     if "hello" in you:
         print("hello detected, start led for several seconds")
-        light()
-
-def light()
-    pixel_ring = find()
-    pixel_ring.set_volume(8)
-    time.sleep(2)
-    pixel_ring.off()
+        pixel_ring = find()
+        pixel_ring.set_volume(8)
+        time.sleep(2)
+        pixel_ring.off()
 
 for i, mic_name in enumerate (sr.Microphone.list_microphone_names()):
     print("mic: " + mic_name)
