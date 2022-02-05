@@ -14,14 +14,12 @@ yes | sudo apt install espeak libespeak1 portaudio19-dev python-dev libportaudio
 # pyttsx3: text to speech library
 sudo pip install pyttsx3 PyAudio SpeechRecognition
 
-# from https://stackoverflow.com/a/64932897/9008720
-# need if start as sudo
-#sudo adduser root pulse-access
-#sudo pulseaudio --system=true 0<&- >/dev/null 2>&1 &
-
 # for usb mic array led
 # https://wiki.seeedstudio.com/ReSpeaker_Mic_Array_v2.0/
 sudo pip install pyusb click
 # more git clone stuff see link
 
-
+# from https://stackoverflow.com/a/64932897/9008720
+# need if start as sudo
+sudo adduser root pulse-access
+sudo pulseaudio --system=true 0<&- >/dev/null 2>&1 &
