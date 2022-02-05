@@ -89,22 +89,20 @@ def callback(self, audio):
         time.sleep(2)
         pixel_ring.off()
 
-for i, mic_name in enumerate (sr.Microphone.list_microphone_names()):
-    print("mic: " + mic_name)
-    # pulse seems better than usb mic
-    if "pulse" in mic_name:
-    #if "USB PnP Sound Device" in mic_name:
-        mic = sr.Microphone(device_index=i, chunk_size=1024, sample_rate=48000)
-
-rec = sr.Recognizer()
-rec.dynamic_energy_threshold = True
-rec.non_speaking_duration= 0.1
-rec.pause_threshold = 0.1
-#rec.energy_threshold = 3000
-with mic as source:
-    rec.adjust_for_ambient_noise(source, duration=0.5)
-rec.listen_in_background(mic, callback, phrase_time_limit=2)
-
 if __name__ == '__main__':
+    for i, mic_name in enumerate (sr.Microphone.list_microphone_names()):
+        print("mic: " + mic_name)
+        # pulse seems better than usb mic
+        if "pulse" in mic_name:
+        #if "USB PnP Sound Device" in mic_name:
+            mic = sr.Microphone(device_index=i, chunk_size=1024, sample_rate=48000)
+    rec = sr.Recognizer()
+    rec.dynamic_energy_threshold = True
+    rec.non_speaking_duration= 0.1
+    rec.pause_threshold = 0.1
+    #rec.energy_threshold = 3000
+    with mic as source:
+        rec.adjust_for_ambient_noise(source, duration=0.5)
+    rec.listen_in_background(mic, callback, phrase_time_limit=2)
     while True:
         time.sleep(0.1)
