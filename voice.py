@@ -2,6 +2,7 @@
 
 # modified codes from:
 # https://github.com/quangthanh010290/voice_control_using_raspberry/blob/master/rpi_voice_control.py
+# https://github.com/respeaker/pixel_ring/blob/master/pixel_ring/usb_pixel_ring_v2.py
 
 import ctypes
 import inspect
