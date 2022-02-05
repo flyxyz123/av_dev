@@ -1,6 +1,6 @@
 #!/bin/python3
 # edited from https://github.com/Freenove/Freenove_4WD_Smart_Car_Kit_for_Raspberry_Pi
-# by Daniel
+# by Daniel, not me
 
 import time
 import RPi.GPIO as GPIO
