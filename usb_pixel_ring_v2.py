@@ -105,10 +105,10 @@ if __name__ == '__main__':
             time.sleep(3)
             pixel_ring.think()
             time.sleep(3)
-            pixel_ring.set_volume(8)
-            time.sleep(3)
-            pixel_ring.off()
-            time.sleep(3)
+            #pixel_ring.set_volume(8)
+            #time.sleep(3)
+            #pixel_ring.off()
+            #time.sleep(3)
         except KeyboardInterrupt:
             break
 
