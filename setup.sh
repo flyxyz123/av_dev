@@ -20,4 +20,8 @@ sudo pip install pyttsx3 PyAudio SpeechRecognition
 #sudo pulseaudio --system=true 0<&- >/dev/null 2>&1 &
 
 # for usb mic array led
-sudo pip install pyusb
+# https://wiki.seeedstudio.com/ReSpeaker_Mic_Array_v2.0/
+sudo pip install pyusb click
+# more git clone stuff see link
+
+
