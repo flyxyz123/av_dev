@@ -23,3 +23,6 @@ sudo pip install pyusb click
 # need if start as sudo
 sudo adduser root pulse-access
 sudo pulseaudio --system=true 0<&- >/dev/null 2>&1 &
+
+# to start
+sudo ./voice.py
