@@ -14,7 +14,7 @@ import time
 def callback(self, audio):
     print("start recognize")
     try:
-        you = pi_ear.recognize_google(audio)
+        you = rec.recognize_google(audio)
         #you = rec.recognize_sphinx(audio, keyword_entries=[("help", 1.0),("start", 1.0)])
     except:
         you = ""
