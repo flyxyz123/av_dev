@@ -100,7 +100,7 @@ if __name__ == '__main__':
     rec.dynamic_energy_threshold = True
     rec.non_speaking_duration= 0.1
     rec.pause_threshold = 0.1
-    #rec.energy_threshold = 3000
+    rec.energy_threshold = 3000
     with mic as source:
         rec.adjust_for_ambient_noise(source, duration=0.5)
     rec.listen_in_background(mic, callback, phrase_time_limit=2)
