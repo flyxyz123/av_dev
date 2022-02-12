@@ -23,3 +23,5 @@ sudo pip install pyttsx3 PyAudio SpeechRecognition
 # from https://stackoverflow.com/a/64932897/9008720
 # need if start as sudo
 #sudo adduser root pulse-access
+# need to run once per login
+#sudo pulseaudio --system=true 0<&- >/dev/null 2>&1 &
