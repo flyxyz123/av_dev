@@ -85,8 +85,8 @@ def callback(self, audio):
     except:
         you = ""
     print("finish recognize, your speech is: ", you)
-    if "hello" in you:
-        print("hello detected, start led for several seconds")
+    if "help" in you:
+        print("help detected, start led for several seconds")
         #pixel_ring = find()
         #pixel_ring.set_volume(8)
         GPIO.output(RELAY_LAMP_PIN, True)
