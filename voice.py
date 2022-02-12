@@ -112,5 +112,8 @@ if __name__ == '__main__':
     with mic as source:
         rec.adjust_for_ambient_noise(source, duration=0.5)
     rec.listen_in_background(mic, callback, phrase_time_limit=2)
-    while True:
-        time.sleep(0.1)
+    try:
+        while True:
+            time.sleep(0.1)
+    except KeyboardInterrupt:
+        GPIO.output(RELAY_LAMP_PIN, False)
