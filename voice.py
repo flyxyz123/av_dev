@@ -111,8 +111,7 @@ if __name__ == '__main__':
     #rec.energy_threshold = 3000
     with mic as source:
         rec.adjust_for_ambient_noise(source, duration=0.5)
-    #rec.listen_in_background(mic, callback, phrase_time_limit=2)
-    rec.listen_in_background(mic, callback)
+    rec.listen_in_background(mic, callback, phrase_time_limit=2)
     try:
         while True:
             time.sleep(0.1)
