@@ -90,7 +90,7 @@ def callback(self, audio):
         #pixel_ring = find()
         #pixel_ring.set_volume(8)
         GPIO.output(RELAY_LAMP_PIN, True)
-        time.sleep(2)
+        time.sleep(8)
         GPIO.output(RELAY_LAMP_PIN, False)
         time.sleep(2)
         #pixel_ring.off()
