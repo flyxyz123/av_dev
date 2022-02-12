@@ -3,13 +3,15 @@
 import time
 import RPi.GPIO as GPIO
 
+MYPIN = 17
+
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(2, GPIO.OUT)
+GPIO.setup(MYPIN, GPIO.OUT)
 
 while True:
-    GPIO.output(2, True)
+    GPIO.output(MYPIN, True)
     print("true")
     time.sleep(3)
-    GPIO.output(2, False)
+    GPIO.output(MYPIN, False)
     print("false")
     time.sleep(3)

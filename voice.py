@@ -15,7 +15,7 @@ import time
 #import usb.util
 import RPi.GPIO as GPIO
 
-RELAY_LAMP_PIN = 2
+RELAY_LAMP_PIN = 17
 
 #class PixelRing:
 #    TIMEOUT = 8000
