@@ -89,9 +89,9 @@ def callback(self, audio):
         print("hello detected, start led for several seconds")
         #pixel_ring = find()
         #pixel_ring.set_volume(8)
-        GPIO.output(RELAY_LAMP_PIN, False)
-        time.sleep(2)
         GPIO.output(RELAY_LAMP_PIN, True)
+        time.sleep(2)
+        GPIO.output(RELAY_LAMP_PIN, False)
         #pixel_ring.off()
 
 if __name__ == '__main__':
