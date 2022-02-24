@@ -85,7 +85,16 @@ def callback(self, audio):
     except:
         you = ""
     print("finish recognize, your speech is: ", you)
-    if "hello" in you:
+    if "help" in you:
+        print("help detected, start light for several seconds")
+        #pixel_ring = find()
+        #pixel_ring.set_volume(8)
+        GPIO.output(RELAY_LAMP_PIN, True)
+        time.sleep(8)
+        GPIO.output(RELAY_LAMP_PIN, False)
+        time.sleep(2)
+        #pixel_ring.off()
+    elif "hello" in you:
         print("hello detected, start light for several seconds")
         #pixel_ring = find()
         #pixel_ring.set_volume(8)
@@ -111,7 +120,7 @@ if __name__ == '__main__':
     rec.energy_threshold = 3000
     with mic as source:
         rec.adjust_for_ambient_noise(source, duration=0.5)
-    rec.listen_in_background(mic, callback, phrase_time_limit=2)
+    rec.listen_in_background(mic, callback, phrase_time_limit=1)
     try:
         while True:
             time.sleep(0.1)

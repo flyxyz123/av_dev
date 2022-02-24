@@ -7,27 +7,27 @@ import RPi.GPIO as GPIO
 
 #define pins
 SPI_CS_1_PIN = 16 # front right all CS pins are inverted (false=active, ture=deactive)
-#SPI_CS_2_PIN = 36 # rear right
-#SPI_CS_3_PIN = 36 # front left
-#SPI_CS_4_PIN = 36 # rear left
+SPI_CS_2_PIN = 13 # front left
+#SPI_CS_3_PIN = 19 # rear right
+#SPI_CS_4_PIN = 26 # rear left
 SPI_CLK_PIN = 21
 SPI_SDISDO_PIN = 20
 XSISTR_REVERSE_1_PIN = 12 # front right
-#XSISTR_REVERSE_2_PIN = 32 # rear right
-#XSISTR_REVERSE_3_PIN = 32 # front left
-#XSISTR_REVERSE_4_PIN = 32 # rear left
+XSISTR_REVERSE_2_PIN = 6  # front left
+#XSISTR_REVERSE_3_PIN = 5 # rear right
+#XSISTR_REVERSE_4_PIN = 6 # rear left
 
 class Motor:
     def __init__(self):
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(SPI_CS_1_PIN, GPIO.OUT)
-        #GPIO.setup(SPI_CS_2_PIN, GPIO.OUT)
+        GPIO.setup(SPI_CS_2_PIN, GPIO.OUT)
         #GPIO.setup(SPI_CS_3_PIN, GPIO.OUT)
         #GPIO.setup(SPI_CS_4_PIN, GPIO.OUT)
         GPIO.setup(SPI_CLK_PIN, GPIO.OUT)
         GPIO.setup(SPI_SDISDO_PIN, GPIO.OUT)
         GPIO.setup(XSISTR_REVERSE_1_PIN, GPIO.OUT)
-        #GPIO.setup(XSISTR_REVERSE_2_PIN, GPIO.OUT)
+        GPIO.setup(XSISTR_REVERSE_2_PIN, GPIO.OUT)
         #GPIO.setup(XSISTR_REVERSE_3_PIN, GPIO.OUT)
         #GPIO.setup(XSISTR_REVERSE_4_PIN, GPIO.OUT)
         
@@ -35,7 +35,7 @@ class Motor:
         if speed1>127:
             speed1=127
         elif speed1<0:
-            speed1=0        
+            speed1=0
         
         if speed2>127:
             speed2=127
@@ -81,31 +81,35 @@ class Motor:
                            speed3,isReverse3,speed4,isReverse4):
         speed1,speed2,speed3,speed4=self.speed_range(speed1,speed2,speed3,speed4)
         self.set_speed(SPI_CS_1_PIN, XSISTR_REVERSE_1_PIN, isReverse1, speed1)
-        #self.set_speed(SPI_CS_2_PIN, XSISTR_REVERSE_2_PIN, isReverse1, speed2)
+        self.set_speed(SPI_CS_2_PIN, XSISTR_REVERSE_2_PIN, isReverse2, speed2)
         #self.set_speed(SPI_CS_3_PIN, XSISTR_REVERSE_3_PIN, isReverse1, speed3)
         #self.set_speed(SPI_CS_4_PIN, XSISTR_REVERSE_4_PIN, isReverse1, speed4)
             
             
-motor=Motor()          
+motor=Motor()
 def loop():
     while True:
         print ('forward')
-        for level in range(0,128):
+        for level in range(40,70):
             motor.setMotorModel(level,0,level,0,level,0,level,0)    #Forward
-            print(level)
+#            print(level)
             time.sleep(0.05)
-        print("sleep")
+#        print("sleep")
         time.sleep(1)
         print("backward")
-        for level in range(0,128):
+        for level in range(15,75):
             motor.setMotorModel(level,1,level,1,level,1,level,1)    #Backward
-            print(level)
+#            print(level)
             time.sleep(0.05)
         print("sleep")
-        time.sleep(1)
-        print("stop")
-        motor.setMotorModel(0,0,0,0,0,0,0,0)    #Stop
-        time.sleep(1)
+#        time.sleep(0.5)
+#        for level in range(40,45):
+#            motor.setMotorModel(level,0,level,0,0,0,0,0)
+#            print(level)
+#            time.sleep(1)
+#        print("stop")
+#        motor.setMotorModel(0,0,0,0,0,0,0,0)    #Stop
+#        time.sleep(0.5)
     
 def destroy():
     motor.setMotorModel(0,0,0,0,0,0,0,0)     
@@ -115,4 +119,3 @@ if __name__=='__main__':
         loop()
     except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
         destroy()
-
