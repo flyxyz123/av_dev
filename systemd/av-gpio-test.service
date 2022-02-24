@@ -1,0 +1,8 @@
+[Unit]
+Description=Runs /home/pi/av_dev/gpio_test.py
+  
+[Service]
+ExecStart=/home/pi/av_dev/gpio_test.py
+
+[Install]
+WantedBy=multi-user.target
