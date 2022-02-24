@@ -10,4 +10,4 @@ sudo systemctl daemon-reload
 #sudo systemctl enable --now av-gpio-test
 sudo systemctl enable --now av-motor
 sudo systemctl enable --now av-sudo-pulseaudio
-sudo systemctl enable --now av-voice
+#sudo systemctl enable --now av-voice
