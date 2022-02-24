@@ -3,7 +3,7 @@ Description=Runs /home/pi/av_dev/voice.py
 After=av-sudo-pulseaudio.service
   
 [Service]
-ExecStart=/home/pi/av_dev/voice.py
+ExecStart=sleep 1; /home/pi/av_dev/voice.py
 
 [Install]
 WantedBy=multi-user.target
