@@ -1,0 +1,8 @@
+[Unit]
+Description=Runs pulseaudio as root, needed for av voice.py
+  
+[Service]
+ExecStart=sudo pulseaudio --system=true 0<&- >/dev/null 2>&1 &
+
+[Install]
+WantedBy=multi-user.target

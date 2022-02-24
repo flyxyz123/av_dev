@@ -1,0 +1,8 @@
+[Unit]
+Description=Runs /home/pi/av_dev/motor.py
+  
+[Service]
+ExecStart=/home/pi/av_dev/motor.py
+
+[Install]
+WantedBy=multi-user.target
