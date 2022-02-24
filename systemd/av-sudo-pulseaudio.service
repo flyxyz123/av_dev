@@ -4,6 +4,7 @@ Before=av-voice.service
   
 [Service]
 ExecStart=sudo pulseaudio --system=true
+Type=exec
 
 [Install]
 WantedBy=multi-user.target
