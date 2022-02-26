@@ -1,0 +1,8 @@
+[Unit]
+Description=Monitor display camera video with mpv
+  
+[Service]
+ExecStart=mpv /dev/video0 --profile=low-latency
+
+[Install]
+WantedBy=multi-user.target
