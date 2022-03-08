@@ -1,0 +1,16 @@
+infrared tracking sensors
+connector (big)
+connector (small)
+wires with connector (10 gauge)
+resistors
+tube strap
+pipe connector?
+wires (22 gauge)
+wires (10 gauge)
+wires (14 gauge) no need
+wires (12 gauge) no need
+USB to micro USB wires
+USB to USB-C wires
+Li-ion 18650 batteries
+battery charger
+
