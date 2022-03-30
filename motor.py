@@ -90,26 +90,23 @@ motor=Motor()
 def loop():
     while True:
         print ('forward')
-        for level in range(40,70):
+        for level in range(40,50):
             motor.setMotorModel(level,0,level,0,level,0,level,0)    #Forward
-#            print(level)
-            time.sleep(0.05)
-#        print("sleep")
-        time.sleep(1)
-        print("backward")
-        for level in range(15,75):
-            motor.setMotorModel(level,1,level,1,level,1,level,1)    #Backward
-#            print(level)
-            time.sleep(0.05)
+            print(level)
+            time.sleep(2)
+        print("stop")
+        motor.setMotorModel(0,0,0,0,0,0,0,0)    #Stop
         print("sleep")
-#        time.sleep(0.5)
-#        for level in range(40,45):
-#            motor.setMotorModel(level,0,level,0,0,0,0,0)
-#            print(level)
-#            time.sleep(1)
-#        print("stop")
-#        motor.setMotorModel(0,0,0,0,0,0,0,0)    #Stop
-#        time.sleep(0.5)
+        time.sleep(5)
+        print("backward")
+        for level in range(15,25):
+            motor.setMotorModel(level,1,level,1,level,1,level,1)    #Backward
+            print(level)
+            time.sleep(2)
+        print("stop")
+        motor.setMotorModel(0,0,0,0,0,0,0,0)    #Stop
+        print("sleep")
+        time.sleep(5)
     
 def destroy():
     motor.setMotorModel(0,0,0,0,0,0,0,0)     
