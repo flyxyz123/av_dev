@@ -121,7 +121,7 @@ if __name__ == '__main__':
 
     # test
     with mic as source:
-        audio = r.listen(source)
+        audio = rec.listen(source)
     print("write file")
     with open("microphone-results.flac", "wb") as f:
         f.write(rec.get_flac_data())
