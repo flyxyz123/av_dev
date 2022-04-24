@@ -3,37 +3,23 @@
 import time
 import RPi.GPIO as GPIO
 
+LAMP_PIN = ["17", "27", "22", "13", "19", "26"]
+
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.OUT)
-GPIO.setup(27, GPIO.OUT)
-GPIO.setup(22, GPIO.OUT)
-GPIO.setup(13, GPIO.OUT)
-GPIO.setup(19, GPIO.OUT)
-GPIO.setup(26, GPIO.OUT)
+for pin in LAMP_PIN:
+    GPIO.setup(pin, GPIO.OUT)
 
 if __name__ == '__main__':
     try:
         while True:
-            GPIO.output(17, True)
-            GPIO.output(27, True)
-            GPIO.output(22, True)
-            GPIO.output(13, True)
-            GPIO.output(19, True)
-            GPIO.output(26, True)
+            for pin in LAMP_PIN:
+                GPIO.output(pin, True)
             print("true")
-            time.sleep(4)
-            GPIO.output(17, False)
-            GPIO.output(27, False)
-            GPIO.output(22, False)
-            GPIO.output(13, False)
-            GPIO.output(19, False)
-            GPIO.output(26, False)
+            time.sleep(10)
+            for pin in LAMP_PIN:
+                GPIO.output(pin, False)
             print("false")
-            time.sleep(4)
+            time.sleep(2)
     except KeyboardInterrupt:
-            GPIO.output(17, False)
-            GPIO.output(27, False)
-            GPIO.output(22, False)
-            GPIO.output(13, False)
-            GPIO.output(19, False)
-            GPIO.output(26, False)
+            for pin in LAMP_PIN:
+                GPIO.output(pin, False)
