@@ -113,14 +113,11 @@ if __name__ == '__main__':
     rec.pause_threshold = 0.1
     rec.energy_threshold = 3000
 
-    chunk_name = "Chunks/chunk_{}.wav".format(chunk_no)
-    wf = wave.open(chunk_name, 'wb')
-    wf.setnchannels(1)
-    wf.setsampwidth(p.get_sample_size(pyaudio.paInt16))
-    wf.setframerate(rate)
-    wf.writeframes(b''.join(fr))
-    wf.close()
+    print("write file")
+    with open("microphone-results.flac", "wb") as f:
+        f.write(audio.get_flac_data())
 
+    print("recognize")
     with mic as source:
         rec.adjust_for_ambient_noise(source, duration=0.5)
     rec.listen_in_background(mic, callback, phrase_time_limit=1)
