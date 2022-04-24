@@ -120,7 +120,7 @@ if __name__ == '__main__':
     #rec.listen_in_background(mic, callback, phrase_time_limit=1)
 
     # test
-    for i in range(10)
+    for i in range(10):
         with mic as source:
             audio = rec.listen(source)
         print("write file")
