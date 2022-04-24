@@ -85,7 +85,7 @@ def callback(self, audio):
     except:
         you = ""
     print("finish recognize, your speech is: ", you)
-    if "help" or "hello" in you:
+    if "help" in you or "hello" in you:
         print("help or hello detected, start light for several seconds")
         #pixel_ring = find()
         #pixel_ring.set_volume(8)
