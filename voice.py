@@ -117,17 +117,17 @@ if __name__ == '__main__':
         rec.adjust_for_ambient_noise(source, duration=5)
 
     # not test
-    #print("recognize")
-    #rec.listen_in_background(mic, callback, phrase_time_limit=1)
+    print("recognize")
+    rec.listen_in_background(mic, callback, phrase_time_limit=1)
 
     # test
-    print("start test")
-    for i in range(10):
-        with mic as source:
-            audio = rec.listen(source)
-        print("write file", i)
-        with open(str(i)+".flac", "wb") as f:
-            f.write(audio.get_flac_data())
+    #print("start test")
+    #for i in range(10):
+    #    with mic as source:
+    #        audio = rec.listen(source)
+    #    print("write file", i)
+    #    with open(str(i)+".flac", "wb") as f:
+    #        f.write(audio.get_flac_data())
 
     try:
         while True:
