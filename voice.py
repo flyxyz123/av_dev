@@ -15,7 +15,7 @@ import time
 #import usb.util
 import RPi.GPIO as GPIO
 
-RELAY_LAMP_PIN = 5
+LAMP_PIN_ARR = [17, 27, 22, 10, 9, 11]
 
 #class PixelRing:
 #    TIMEOUT = 8000
@@ -77,22 +77,6 @@ RELAY_LAMP_PIN = 5
 #    #         dev.detach_kernel_driver(interface_number)
 #    return PixelRing(dev)
 
-def lighton():
-    GPIO.output(17, True)
-    GPIO.output(27, True)
-    GPIO.output(22, True)
-    GPIO.output(13, True)
-    GPIO.output(19, True)
-    GPIO.output(26, True)
-
-def lightoff():
-    GPIO.output(17, False)
-    GPIO.output(27, False)
-    GPIO.output(22, False)
-    GPIO.output(13, False)
-    GPIO.output(19, False)
-    GPIO.output(26, False)
-
 def callback(self, audio):
     print("start recognize")
     try:
@@ -101,38 +85,22 @@ def callback(self, audio):
     except:
         you = ""
     print("finish recognize, your speech is: ", you)
-    if "help" in you:
+    if "help" or "hello" in you:
         print("help detected, start light for several seconds")
         #pixel_ring = find()
         #pixel_ring.set_volume(8)
-        lighton()
-        #GPIO.output(RELAY_LAMP_PIN, True)
+        for pin in LAMP_PIN_ARR:
+            GPIO.output(pin, True)
         time.sleep(8)
-        lightoff()
-        #GPIO.output(RELAY_LAMP_PIN, False)
-        time.sleep(2)
-        #pixel_ring.off()
-    elif "hello" in you:
-        print("hello detected, start light for several seconds")
-        #pixel_ring = find()
-        #pixel_ring.set_volume(8)
-        lighton()
-        #GPIO.output(RELAY_LAMP_PIN, True)
-        time.sleep(8)
-        lightoff()
-        #GPIO.output(RELAY_LAMP_PIN, False)
+        for pin in LAMP_PIN_ARR:
+            GPIO.output(pin, False)
         time.sleep(2)
         #pixel_ring.off()
 
 if __name__ == '__main__':
     GPIO.setmode(GPIO.BCM)
-    #GPIO.setup(RELAY_LAMP_PIN, GPIO.OUT)
-    GPIO.setup(17, GPIO.OUT)
-    GPIO.setup(27, GPIO.OUT)
-    GPIO.setup(22, GPIO.OUT)
-    GPIO.setup(13, GPIO.OUT)
-    GPIO.setup(19, GPIO.OUT)
-    GPIO.setup(26, GPIO.OUT)
+    for pin in LAMP_PIN:
+        GPIO.setup(pin, GPIO.OUT)
     for i, mic_name in enumerate (sr.Microphone.list_microphone_names()):
         print("mic: " + mic_name)
         # pulse seems better than usb mic
@@ -151,5 +119,5 @@ if __name__ == '__main__':
         while True:
             time.sleep(0.1)
     except KeyboardInterrupt:
-        lightoff()
-        #GPIO.output(RELAY_LAMP_PIN, False)
+        for pin in LAMP_PIN_ARR:
+            GPIO.output(pin, False)
