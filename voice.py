@@ -111,15 +111,17 @@ if __name__ == '__main__':
     rec.dynamic_energy_threshold = True
     rec.non_speaking_duration= 0.1
     rec.pause_threshold = 0.1
-    #rec.energy_threshold = 1000
+    #rec.energy_threshold = 500
+
+    with mic as source:
+        rec.adjust_for_ambient_noise(source, duration=5)
 
     # not test
-    #with mic as source:
-    #    rec.adjust_for_ambient_noise(source, duration=0.5)
     #print("recognize")
     #rec.listen_in_background(mic, callback, phrase_time_limit=1)
 
     # test
+    print("start test")
     for i in range(10):
         with mic as source:
             audio = rec.listen(source)
