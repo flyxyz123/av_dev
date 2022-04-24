@@ -86,7 +86,7 @@ def callback(self, audio):
         you = ""
     print("finish recognize, your speech is: ", you)
     if "help" or "hello" in you:
-        print("help detected, start light for several seconds")
+        print("help or hello detected, start light for several seconds")
         #pixel_ring = find()
         #pixel_ring.set_volume(8)
         for pin in LAMP_PIN_ARR:
