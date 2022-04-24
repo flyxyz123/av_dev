@@ -79,7 +79,7 @@ LAMP_PIN_ARR = [17, 27, 22, 10, 9, 11]
 
 def callback(self, audio):
     print("start recognize")
-    try
+    try:
         #you = rec.recognize_google(audio)
         you = rec.recognize_sphinx(audio, keyword_entries=[("help", 1.0),("hello", 1.0)])
     except:
