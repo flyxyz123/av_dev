@@ -111,7 +111,7 @@ if __name__ == '__main__':
     rec.dynamic_energy_threshold = True
     rec.non_speaking_duration= 0.1
     rec.pause_threshold = 0.1
-    rec.energy_threshold = 3000
+    rec.energy_threshold = 1000
 
     # not test
     #with mic as source:
