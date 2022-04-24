@@ -115,7 +115,7 @@ if __name__ == '__main__':
 
     print("write file")
     with open("microphone-results.flac", "wb") as f:
-        f.write(audio.get_flac_data())
+        f.write(rec.get_flac_data())
 
     print("recognize")
     with mic as source:
