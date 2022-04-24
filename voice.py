@@ -81,7 +81,7 @@ def callback(self, audio):
     print("start recognize")
     try:
         #you = rec.recognize_google(audio)
-        you = rec.recognize_sphinx(audio, keyword_entries=[("help", 1.0),("hello", 1.0)])
+        you = rec.recognize_sphinx(audio, keyword_entries=[("help", 1.0)])
     except:
         you = ""
     print("finish recognize, your speech is: ", you)
