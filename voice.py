@@ -113,14 +113,15 @@ if __name__ == '__main__':
     rec.pause_threshold = 0.1
     rec.energy_threshold = 3000
 
-    print("write file")
-    with open("microphone-results.flac", "wb") as f:
-        f.write(rec.get_flac_data())
-
     print("recognize")
     with mic as source:
         rec.adjust_for_ambient_noise(source, duration=0.5)
     rec.listen_in_background(mic, callback, phrase_time_limit=1)
+
+    print("write file")
+    with open("microphone-results.flac", "wb") as f:
+        f.write(rec.get_flac_data())
+
     try:
         while True:
             time.sleep(0.1)
