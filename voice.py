@@ -123,7 +123,7 @@ if __name__ == '__main__':
     for i in range(10):
         with mic as source:
             audio = rec.listen(source)
-        print("write file"+str(i))
+        print("write file", i)
         with open(str(i)+".flac", "wb") as f:
             f.write(audio.get_flac_data())
 
