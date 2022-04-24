@@ -81,16 +81,16 @@ def lighton():
     GPIO.output(17, True)
     GPIO.output(27, True)
     GPIO.output(22, True)
-    GPIO.output(5, True)
-    GPIO.output(6, True)
+    GPIO.output(13, True)
+    GPIO.output(19, True)
     GPIO.output(26, True)
 
 def lightoff():
     GPIO.output(17, False)
     GPIO.output(27, False)
     GPIO.output(22, False)
-    GPIO.output(5, False)
-    GPIO.output(6, False)
+    GPIO.output(13, False)
+    GPIO.output(19, False)
     GPIO.output(26, False)
 
 def callback(self, audio):
@@ -130,8 +130,8 @@ if __name__ == '__main__':
     GPIO.setup(17, GPIO.OUT)
     GPIO.setup(27, GPIO.OUT)
     GPIO.setup(22, GPIO.OUT)
-    GPIO.setup(5, GPIO.OUT)
-    GPIO.setup(6, GPIO.OUT)
+    GPIO.setup(13, GPIO.OUT)
+    GPIO.setup(19, GPIO.OUT)
     GPIO.setup(26, GPIO.OUT)
     for i, mic_name in enumerate (sr.Microphone.list_microphone_names()):
         print("mic: " + mic_name)
