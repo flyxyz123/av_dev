@@ -99,7 +99,7 @@ def callback(self, audio):
 
 if __name__ == '__main__':
     GPIO.setmode(GPIO.BCM)
-    for pin in LAMP_PIN:
+    for pin in LAMP_PIN_ARR:
         GPIO.setup(pin, GPIO.OUT)
     for i, mic_name in enumerate (sr.Microphone.list_microphone_names()):
         print("mic: " + mic_name)
