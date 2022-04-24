@@ -124,7 +124,7 @@ if __name__ == '__main__':
         audio = rec.listen(source)
     print("write file")
     with open("microphone-results.flac", "wb") as f:
-        f.write(rec.get_flac_data())
+        f.write(audio.get_flac_data())
 
     try:
         while True:
