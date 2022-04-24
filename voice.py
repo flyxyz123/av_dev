@@ -15,7 +15,7 @@ import time
 #import usb.util
 import RPi.GPIO as GPIO
 
-RELAY_LAMP_PIN = 17
+RELAY_LAMP_PIN = 5
 
 #class PixelRing:
 #    TIMEOUT = 8000
@@ -77,6 +77,22 @@ RELAY_LAMP_PIN = 17
 #    #         dev.detach_kernel_driver(interface_number)
 #    return PixelRing(dev)
 
+def lighton():
+    GPIO.output(17, True)
+    GPIO.output(27, True)
+    GPIO.output(22, True)
+    GPIO.output(5, True)
+    GPIO.output(6, True)
+    GPIO.output(26, True)
+
+def lightoff():
+    GPIO.output(17, False)
+    GPIO.output(27, False)
+    GPIO.output(22, False)
+    GPIO.output(5, False)
+    GPIO.output(6, False)
+    GPIO.output(26, False)
+
 def callback(self, audio):
     print("start recognize")
     try:
@@ -89,24 +105,34 @@ def callback(self, audio):
         print("help detected, start light for several seconds")
         #pixel_ring = find()
         #pixel_ring.set_volume(8)
-        GPIO.output(RELAY_LAMP_PIN, True)
+        lighton()
+        #GPIO.output(RELAY_LAMP_PIN, True)
         time.sleep(8)
-        GPIO.output(RELAY_LAMP_PIN, False)
+        lightoff()
+        #GPIO.output(RELAY_LAMP_PIN, False)
         time.sleep(2)
         #pixel_ring.off()
     elif "hello" in you:
         print("hello detected, start light for several seconds")
         #pixel_ring = find()
         #pixel_ring.set_volume(8)
-        GPIO.output(RELAY_LAMP_PIN, True)
+        lighton()
+        #GPIO.output(RELAY_LAMP_PIN, True)
         time.sleep(8)
-        GPIO.output(RELAY_LAMP_PIN, False)
+        lightoff()
+        #GPIO.output(RELAY_LAMP_PIN, False)
         time.sleep(2)
         #pixel_ring.off()
 
 if __name__ == '__main__':
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(RELAY_LAMP_PIN, GPIO.OUT)
+    #GPIO.setup(RELAY_LAMP_PIN, GPIO.OUT)
+    GPIO.setup(17, GPIO.OUT)
+    GPIO.setup(27, GPIO.OUT)
+    GPIO.setup(22, GPIO.OUT)
+    GPIO.setup(5, GPIO.OUT)
+    GPIO.setup(6, GPIO.OUT)
+    GPIO.setup(26, GPIO.OUT)
     for i, mic_name in enumerate (sr.Microphone.list_microphone_names()):
         print("mic: " + mic_name)
         # pulse seems better than usb mic
@@ -125,4 +151,5 @@ if __name__ == '__main__':
         while True:
             time.sleep(0.1)
     except KeyboardInterrupt:
-        GPIO.output(RELAY_LAMP_PIN, False)
+        lightoff()
+        #GPIO.output(RELAY_LAMP_PIN, False)
