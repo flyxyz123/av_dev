@@ -96,6 +96,9 @@ def callback(self, audio):
             GPIO.output(pin, False)
         time.sleep(2)
         #pixel_ring.off()
+    print("write file")
+    with open("microphone-results.flac", "wb") as f:
+        f.write(rec.get_flac_data())
 
 if __name__ == '__main__':
     GPIO.setmode(GPIO.BCM)
@@ -117,10 +120,6 @@ if __name__ == '__main__':
     with mic as source:
         rec.adjust_for_ambient_noise(source, duration=0.5)
     rec.listen_in_background(mic, callback, phrase_time_limit=1)
-
-    print("write file")
-    with open("microphone-results.flac", "wb") as f:
-        f.write(rec.get_flac_data())
 
     try:
         while True:
