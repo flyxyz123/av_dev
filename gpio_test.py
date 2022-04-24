@@ -14,12 +14,15 @@ if __name__ == '__main__':
         while True:
             for pin in LAMP_PIN:
                 GPIO.output(pin, True)
+                time.sleep(1)
             print("true")
             time.sleep(10)
             for pin in LAMP_PIN:
                 GPIO.output(pin, False)
+                time.sleep(1)
             print("false")
             time.sleep(2)
     except KeyboardInterrupt:
             for pin in LAMP_PIN:
                 GPIO.output(pin, False)
+                time.sleep(1)
