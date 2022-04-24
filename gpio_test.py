@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 LAMP_PIN_ARR = [17, 27, 22, 10, 9, 11]
 
 GPIO.setmode(GPIO.BCM)
-for pin in LAMP_PIN:
+for pin in LAMP_PIN_ARR:
     GPIO.setup(pin, GPIO.OUT)
 
 if __name__ == '__main__':
