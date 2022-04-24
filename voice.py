@@ -91,10 +91,11 @@ def callback(self, audio):
         #pixel_ring.set_volume(8)
         for pin in LAMP_PIN_ARR:
             GPIO.output(pin, True)
-        time.sleep(8)
+        #time.sleep(8)
+        time.sleep(4)
         for pin in LAMP_PIN_ARR:
             GPIO.output(pin, False)
-        time.sleep(2)
+        #time.sleep(2)
         #pixel_ring.off()
 
 if __name__ == '__main__':
