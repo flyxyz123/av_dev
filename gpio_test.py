@@ -3,7 +3,8 @@
 import time
 import RPi.GPIO as GPIO
 
-LAMP_PIN = [17, 27, 22, 13, 19, 26]
+#LAMP_PIN = [17, 27, 22, 13, 19, 26]
+LAMP_PIN = [17, 27]
 
 GPIO.setmode(GPIO.BCM)
 for pin in LAMP_PIN:
