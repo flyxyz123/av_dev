@@ -1,0 +1,31 @@
+#!/bin/python3
+
+import time
+import RPi.GPIO as GPIO
+
+PIN_ARR = [23, 24]
+
+GPIO.setmode(GPIO.BCM)
+for pin in PIN_ARR:
+    GPIO.setup(pin, GPIO.OUT)
+    GPIO.output(pin, False)
+
+if __name__ == '__main__':
+    try:
+        while True:
+            print("arr [0] true, [1] false")
+            GPIO.output(PIN_ARR[0], True)
+            GPIO.output(PIN_ARR[1], False)
+            time.sleep(1)
+            print("false")
+            GPIO.output(PIN_ARR[0], False)
+            GPIO.output(PIN_ARR[1], False)
+            time.sleep(1)
+            print("arr [0] false, [1] true")
+            GPIO.output(PIN_ARR[0], False)
+            GPIO.output(PIN_ARR[1], True)
+            time.sleep(1)
+    except KeyboardInterrupt:
+            print("false")
+            GPIO.output(PIN_ARR[0], False)
+            GPIO.output(PIN_ARR[1], False)
