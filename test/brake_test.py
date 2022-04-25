@@ -10,6 +10,9 @@ for pin in PIN_ARR:
     GPIO.setup(pin, GPIO.OUT)
     GPIO.output(pin, False)
 
+print(PIN_ARR[0])
+print(PIN_ARR[1])
+
 if __name__ == '__main__':
     try:
         while True:
