@@ -27,6 +27,9 @@ if __name__ == '__main__':
             print("arr [0] false, [1] true")
             GPIO.output(PIN_ARR[0], False)
             GPIO.output(PIN_ARR[1], True)
+            print("false")
+            GPIO.output(PIN_ARR[0], False)
+            GPIO.output(PIN_ARR[1], False)
             time.sleep(2)
     except KeyboardInterrupt:
             print("false")
