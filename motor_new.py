@@ -92,7 +92,7 @@ def loop():
     while True:
         print ('forward')
         #for level in range(40,50):
-        for level in range(0,100):
+        for level in range(0,127):
             motor.setMotorModel(level,0,level,0,level,0,level,0)    #Forward
             print(level)
             time.sleep(0.2)
@@ -102,7 +102,7 @@ def loop():
         time.sleep(5)
         print("backward")
         #for level in range(15,25):
-        for level in range(0,100):
+        for level in range(0,127):
             motor.setMotorModel(level,1,level,1,level,1,level,1)    #Backward
             print(level)
             time.sleep(0.2)
