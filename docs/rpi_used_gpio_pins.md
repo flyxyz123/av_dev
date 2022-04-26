@@ -2,8 +2,9 @@ for prototype 2
 
 all numbers are GPIO pin numbers
 
-voice lamp
+lamps
 - 17, 27, 22, 10, 9, 11
+- front, right, left, top, back, brake
 
 brake (linear actuator)
 - 23, 24
