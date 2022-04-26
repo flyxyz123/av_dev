@@ -14,6 +14,9 @@ output True for several for GPIO 26 pin will make rpi3 shutdown, not sure why
 motor maybe use
 - 16 or 13, 21, 20, 12 or 6
 
+motor 3 pin connector
+- 16, 21, 7
+
 motor 2 pin connector
 - 25
 
