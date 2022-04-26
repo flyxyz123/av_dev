@@ -18,7 +18,7 @@ output True several seconds for GPIO 26 pin will make rpi3 shutdown, not sure wh
 motor 3 pin connector (control speed?)
 - 16, 21, 7
 
-motor 2 pin connector (control reverse?)
+motor 2 pin connector
 - 25
 
 unused gpio pins (left and right based on <https://pinout.xyz>)
