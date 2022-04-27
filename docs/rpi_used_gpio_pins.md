@@ -16,15 +16,26 @@ output True several seconds for GPIO 26 pin will make rpi3 shutdown, not sure wh
 - 26
 
 motor 3 pin connector (control speed?)
-- 16, 21, 7
+- 7, 21, 16
+- CS, SCK, SDI/SDO
 
 motor 2 pin connector
 - 25
 
+forward reverse switch
+- two wires
+    - 18
+- three wires
+    - 19
+
 unused gpio pins (left and right based on <https://pinout.xyz>)
 - left
-    - 4, 0, 19
+    - 4, 0
 - right
-    - 14, 15, 18, 8, 1
+    - 14, 15, 8, 1
+
+for raspberry pi 4 B, GPIO 0-8 are all pull high (default output 3.3V)
+
+GPIO 14 seems defualt has 1V+, GPIO 15 seems default 3.3V, not sure why
 
 maybe use a table for this doc?
