@@ -3,7 +3,7 @@ for prototype 2
 all numbers are GPIO pin numbers
 
 lamps
-- 17, 27, 22, 10, 11, 9
+- 17, 27, 22, 10, 9, 11
 - front, right, left, top, back, brake
 
 brake (linear actuator)
