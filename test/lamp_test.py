@@ -4,7 +4,7 @@ import time
 import RPi.GPIO as GPIO
 
 # front, right, left, top, back, brake
-PIN_ARR = [17, 27, 22, 10, 9, 11]
+PIN_ARR = [17, 27, 22, 10, 11, 9]
 
 GPIO.setmode(GPIO.BCM)
 for pin in PIN_ARR:
