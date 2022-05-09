@@ -107,16 +107,15 @@ if __name__ == '__main__':
         # pulse seems better than usb mic
         if "pulse" in mic_name:
         #if "USB PnP Sound Device" in mic_name:
-            #mic = sr.Microphone(device_index=i, chunk_size=1024, sample_rate=16000)
-            mic = sr.Microphone(device_index=i, chunk_size=1024, sample_rate=48000)
+            mic = sr.Microphone(device_index=i, chunk_size=1024, sample_rate=16000)
     rec = sr.Recognizer()
     rec.dynamic_energy_threshold = True
     rec.non_speaking_duration= 0.1
     rec.pause_threshold = 0.1
     rec.energy_threshold = 1000
 
-    #with mic as source:
-    #    rec.adjust_for_ambient_noise(source, duration=1)
+    with mic as source:
+        rec.adjust_for_ambient_noise(source, duration=1)
     # not test
     print("recognize")
     rec.listen_in_background(mic, callback, phrase_time_limit=1)
