@@ -105,7 +105,7 @@ if __name__ == '__main__':
     for i, mic_name in enumerate (sr.Microphone.list_microphone_names()):
         print("mic: " + mic_name)
         # pulse seems better than usb mic
-        if "pulse" in mic_name:
+        if "ReSpeaker" in mic_name:
         #if "USB PnP Sound Device" in mic_name:
             mic = sr.Microphone(device_index=i, chunk_size=1024, sample_rate=16000)
     rec = sr.Recognizer()
