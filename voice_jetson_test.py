@@ -133,5 +133,5 @@ if __name__ == '__main__':
         while True:
             time.sleep(0.1)
     except KeyboardInterrupt:
-        for pin in LAMP_PIN_ARR:
-            GPIO.output(pin, False)
+    #    for pin in LAMP_PIN_ARR:
+    #        GPIO.output(pin, False)
