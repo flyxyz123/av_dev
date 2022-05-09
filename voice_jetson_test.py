@@ -105,14 +105,14 @@ if __name__ == '__main__':
     for i, mic_name in enumerate (sr.Microphone.list_microphone_names()):
         print("mic: " + mic_name)
         # pulse seems better than usb mic
-        if "default" in mic_name:
+        if "pulse" in mic_name:
         #if "USB PnP Sound Device" in mic_name:
             mic = sr.Microphone(device_index=i, chunk_size=1024, sample_rate=16000)
     rec = sr.Recognizer()
     rec.dynamic_energy_threshold = True
     rec.non_speaking_duration= 0.1
     rec.pause_threshold = 0.1
-    rec.energy_threshold = 4000
+    rec.energy_threshold = 1000
 
     with mic as source:
         rec.adjust_for_ambient_noise(source, duration=1)
