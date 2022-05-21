@@ -13,7 +13,7 @@ display_video () {
 
 for i in $(seq "${1:-3}"); do
 	# for raspberrypi
-	sleep 1 && display_video $((0+(i-1)*2)) "${2:-pi@rpi-vid.local}" "${3:-1920x1080}" &
+	#sleep 1 && display_video $((0+(i-1)*2)) "${2:-pi@raspberrypi.local}" "${3:-1920x1080}" &
 	# nvidia jetson nano behave differently? need to integrate into code somehow
-	#sleep 1 && display_video $((i-1)) "${2:-jetson@Nano.local}" "${3:-1920x1080}" &
+	sleep 1 && display_video $((i-1)) "${2:-jetson@Nano.local}" "${3:-1920x1080}" &
 done
