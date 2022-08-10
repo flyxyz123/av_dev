@@ -42,7 +42,7 @@ some of these actions above can be solved with some flags/options/configs with s
 
 ## IMPORTANT!!!
 
-the script put password in clear text with `sshpass` for convenience, you should use `ssh-copy-id` and edit /etc/ssh/sshd_config to enable passwordless authentication
+the script put password in clear text with `sshpass` for convenience, you should use `ssh-copy-id` and edit /etc/ssh/sshd_config to enable passwordless authentication for better security
 
 # autostart
 
