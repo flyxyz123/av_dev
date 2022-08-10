@@ -20,7 +20,7 @@ after first time to run voice.py:
 
 # video
 
-on the video receiver side computer (display the video onto big screen, not the computer on the car)
+on the video receiver side computer (display the video onto big screen, not the computer on the car):
 ```sh
 # default 3 cameras
 ./prototyp_1/video_receiver/ssh_ffmpeg_mpv.sh
