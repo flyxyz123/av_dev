@@ -62,6 +62,9 @@ the use of /dev/videox is differnt than raspberry pi, see `diff prototype_1/vide
 
 there are more problems I haven't solved, both voice and videos all seems not working correctly on Jetson Nano
 
-# others
+# misc
 
 if want to display video locally on computer on the car (raspberry pi, jetson nano), while transferring video to other computer, you need to use loop devices (loopback)
+
+be careful about installing python packages with `pip`, python3 is preferrrd, but python2 may be the default, you need to configure the computer somehow to use python3 instead (like symlink /usr/bin/python to python3 instead of python2 and other stuff)
+- raspberry pi has some packages like `python-is-python3` `python-dev-is-python3` for this purpose, which I put them into `voice_setup.sh`, but I remember that they do not work very well (not work as intended)
