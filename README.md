@@ -51,3 +51,13 @@ use systemd service files and symlink_enable_now_services.sh script in ./prototy
 run scripts in .profile (.bash_profile) or .bashrc or .xinitrc or place for the display manager (different display manager has different methods to autostart which I am not familiar with)
 
 <https://github.com/flyxyz123/dwm_av/tree/av> for auto put different videos transfered from remote computers at differnt "tags" (like workspaces), needs to compile and install, dependency requirements and other stuff see <https://dwm.suckless.org/>
+
+# Nvidia Jetson Nano
+
+need to change shebang to /usr/bin/xxx or env xxx
+
+may need to change some package names to be installed in `voice_setup.sh`
+
+the use of /dev/videox is differnt than raspberry pi, see `diff prototype_1/video_receiver/ssh_ffmpeg_mpv.sh prototype_3/video_receiver/ssh_ffmpeg_mpv.sh`
+
+there are more problems I haven't solved, both voice and videos all seems not working correctly on Jetson Nano
