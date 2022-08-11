@@ -61,3 +61,7 @@ may need to change some package names to be installed in `voice_setup.sh`
 the use of /dev/videox is differnt than raspberry pi, see `diff prototype_1/video_receiver/ssh_ffmpeg_mpv.sh prototype_3/video_receiver/ssh_ffmpeg_mpv.sh`
 
 there are more problems I haven't solved, both voice and videos all seems not working correctly on Jetson Nano
+
+# others
+
+if want to display video locally on computer on the car (raspberry pi, jetson nano), while transferring video to other computer, you need to use loop devices (loopback)
