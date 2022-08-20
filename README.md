@@ -12,7 +12,7 @@ first time run voice.py:
 ```
 
 after first time to run voice.py:
-```
+```sh
 ./prototype_2/voice.py
 # if not working:
 #sudo ./prototype_2/voice.py
