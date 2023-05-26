@@ -69,3 +69,8 @@ if want to display video locally on computer on the car (raspberry pi, jetson na
 
 be careful about installing python packages with `pip`, python3 is preferrrd, but python2 may be the default, you need to configure the computer somehow to use python3 instead (like symlink /usr/bin/python to python3 instead of python2 and other stuff)
 - raspberry pi has some packages like `python-is-python3` `python-dev-is-python3` for this purpose, see `voice_setup.sh`, but they may not work well
+
+# references
+
+- <https://github.com/Freenove/Freenove_4WD_Smart_Car_Kit_for_Raspberry_Pi>
+- <https://github.com/quangthanh010290/voice_control_using_raspberry>
